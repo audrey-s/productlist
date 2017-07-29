@@ -1,0 +1,35 @@
+SET NAMES GBK;
+DROP DATABASE IF EXISTS jd;
+CREATE DATABASE jd CHARSET=UTF8;
+USE jd;
+
+CREATE TABLE jd_user(
+uid INT PRIMARY KEY AUTO_INCREMENT,
+uname VARCHAR(50),
+upwd VARCHAR(20)
+);
+CREATE TABLE jd_product(
+pid INT PRIMARY KEY AUTO_INCREMENT,
+pname VARCHAR(100),
+price DECIMAL(10,2),
+pic VARCHAR(100)
+);
+CREATE TABLE jd_cart(
+cid INT PRIMARY KEY AUTO_INCREMENT,
+pid INT,
+uid INT,
+pcount INT
+);
+
+INSERT INTO jd_user VALUES(null,'tom','123456');
+INSERT INTO jd_user VALUES(null,'lucy','456789');
+INSERT INTO jd_user VALUES(null,'naicha','654321');
+
+SELECT * FROM jd_user;
+
+SELECT * FROM jd_product;
+
+INSERT INTO jd_cart VALUES(null,1,1,1);
+INSERT INTO jd_cart VALUES(null,1,2,2);
+
+SELECT * FROM jd_cart;
